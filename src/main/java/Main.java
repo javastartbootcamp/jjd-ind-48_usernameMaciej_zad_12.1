@@ -3,7 +3,6 @@ import java.io.IOException;
 class Main {
     public static void main(String[] args) {
         final String fileName = "operations.txt";
-        final String resultFileName = "results.txt";
 
         try {
             MathOperations[] mathOperations = DataReader.read(fileName);

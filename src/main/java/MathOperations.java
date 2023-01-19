@@ -19,18 +19,6 @@ public class MathOperations {
         };
     }
 
-    public double getA() {
-        return a;
-    }
-
-    public String getOperator() {
-        return operator;
-    }
-
-    public double getB() {
-        return b;
-    }
-
     String getOperationWithResult() {
         return a + " " + operator + " " + b + " = " + getResult();
     }
