@@ -3,17 +3,17 @@ import java.util.Scanner;
 
 public class DataReader {
 
-    static MathNumbers[] read(String fileName) throws IOException {
+    static MathOperations[] read(String fileName) throws IOException {
         Scanner scanner = new Scanner(new File(fileName));
         int lines = countLines(fileName);
-        MathNumbers[] result = new MathNumbers[lines];
+        MathOperations[] result = new MathOperations[lines];
         for (int i = 0; i < lines; i++) {
             String line = scanner.nextLine();
             String[] split = line.split(" ");
-            Double number1 = Double.parseDouble(split[0]);
-            Float number2 = Float.parseFloat(split[1]);
-            Double number3 = Double.parseDouble(split[2]);
-            result[i] = new MathNumbers(number1, number2, number3);
+            double number1 = Double.parseDouble(split[0]);
+            String operator = split[1];
+            double number3 = Double.parseDouble(split[2]);
+            result[i] = new MathOperations(number1, operator, number3);
         }
         return result;
     }

@@ -1,12 +1,14 @@
-import java.io.File;
 import java.io.IOException;
 
 class Main {
     public static void main(String[] args) {
         final String fileName = "operations.txt";
+        final String resultFileName = "results.txt";
 
         try {
-            MathNumbers[] read = DataReader.read(fileName);
+            MathOperations[] mathOperations = DataReader.read(fileName);
+            ConsolePrinter.printResults(mathOperations);
+            DataWriter.saveResultToFile(mathOperations, "results.txt");
         } catch (IOException e) {
             System.err.println("Brak wskazanego pliku");
         }
